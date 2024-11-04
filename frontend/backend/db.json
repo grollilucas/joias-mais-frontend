@@ -1,0 +1,64 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "Anel de Prata",
+      "imagem": "https://via.placeholder.com/150/92c952",
+      "preco": 29.99
+    },
+    {
+      "id": 2,
+      "descricao": "Anel Ouro Rose",
+      "imagem": "https://via.placeholder.com/150/771796",
+      "preco": 19.99
+    },
+    {
+      "id": 3,
+      "descricao": "Anel com Cristal",
+      "imagem": "https://via.placeholder.com/150/24f355",
+      "preco": 25.00
+    },
+    {
+      "id": 4,
+      "descricao": "Anel Ajustável",
+      "imagem": "https://via.placeholder.com/150/d32776",
+      "preco": 15.50
+    },
+    {
+      "id": 5,
+      "descricao": "Anel Minimalista",
+      "imagem": "https://via.placeholder.com/150/f66b97",
+      "preco": 35.00
+    },
+    {
+      "id": 6,
+      "descricao": "Anel com Pedra",
+      "imagem": "https://via.placeholder.com/150/56a8c2",
+      "preco": 9.99
+    },
+    {
+      "id": 7,
+      "descricao": "Anel Prata Floral",
+      "imagem": "https://via.placeholder.com/150/b0f7cc",
+      "preco": 17.50
+    },
+    {
+      "id": 8,
+      "descricao": "Anel Vintage",
+      "imagem": "https://via.placeholder.com/150/54176f",
+      "preco": 12.00
+    },
+    {
+      "id": 9,
+      "descricao": "Anel com Zircônia",
+      "imagem": "https://via.placeholder.com/150/51aa97",
+      "preco": 22.00
+    },
+    {
+      "id": 10,
+      "descricao": "Anel Solitário",
+      "imagem": "https://via.placeholder.com/150/810b14",
+      "preco": 10.00
+    }
+  ]
+}

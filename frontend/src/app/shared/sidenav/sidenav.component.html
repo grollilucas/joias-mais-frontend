@@ -1,0 +1,23 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="push" class="sidenav" fixedInViewport="false" closed>
+    <ul class="sidebar-links">
+      <li><button routerLink="/pedidos" mat-raised-button color="primary">PEDIDOS</button>
+      <li><button routerLink="/cadastro" mat-raised-button color="primary">CADASTRE-SE</button>
+      <li><button routerLink="/cadastro" mat-raised-button color="primary">CADASTRE-SE</button>
+      <li><button routerLink="/cadastro" mat-raised-button color="primary">CADASTRE-SE</button>
+    </ul>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <div class="page-content">
+      <button mat-icon-button color="primary" (click)="sidenav.toggle()" class="menu-icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+     
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>
