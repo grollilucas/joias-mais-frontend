@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AutenticacaoService {
 
   private apiUrl = environment.apiUrl;
@@ -13,6 +14,6 @@ export class AutenticacaoService {
   constructor(private http: HttpClient) { }
 
   autenticar(email: string, senha: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/auth/login`, { email, senha })
+    return this.http.post(`${this.apiUrl}/api/login`, { email, senha })
   }
 }

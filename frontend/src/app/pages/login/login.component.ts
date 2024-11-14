@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
     const email = this.loginForm.value.email;
     const senha = this.loginForm.value.senha;
 
+    console.log('test', this.loginForm.value)
+
     this.authServer.autenticar(email, senha).subscribe({
       next: (value) => {
         console.log('funcionaAA', value)

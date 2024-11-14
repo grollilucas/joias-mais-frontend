@@ -1,4 +1,4 @@
 export const environment = {
-    apiUrl: 'http://localhost:3000/produtos'
+    apiUrl: 'http://l11-joias-mais.test'
     //api braba do bufas
 };
