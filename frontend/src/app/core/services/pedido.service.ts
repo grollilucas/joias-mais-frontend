@@ -5,8 +5,13 @@ import { Observable } from 'rxjs'; // Representa um fluxo de dados assíncrono q
 import { environment } from 'src/environments/environment';
 
 export interface Pedidos{
-  valor: number;
   id: number;
+  valor: number;
+  acrescimos: number;
+  descontos: number;
+  cliente_id: number;
+  vendedor_id: number;
+  emissao: Date;
 }
 
 export interface DataInterface{

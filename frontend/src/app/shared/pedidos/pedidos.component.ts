@@ -20,38 +20,6 @@ export interface UserData {
 }
 
 
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
-];
-const NAMES: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia',
-  'Atticus',
-  'Amelia',
-  'Jack',
-  'Charlotte',
-  'Theodore',
-  'Isla',
-  'Oliver',
-  'Isabella',
-  'Jasper',
-  'Cora',
-  'Levi',
-  'Violet',
-  'Arthur',
-  'Mia',
-  'Thomas',
-  'Elizabeth',
-];
-
 @Component({
   selector: 'app-pedidos',
   styleUrls: ['pedidos.component.scss'],
@@ -100,7 +68,7 @@ export class PedidosComponent implements AfterViewInit {
 }*/
 
 export class PedidosComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'valor', 'actions']; // Define as colunas exibidas na tabela.
+  displayedColumns: string[] = ['id', 'valor', 'acrescimos', 'descontos', 'emissao', 'actions']; // Define as colunas exibidas na tabela.
   dataSource: MatTableDataSource<any>; // Gerencia os dados da tabela.
 
   @ViewChild(MatPaginator) paginator!: MatPaginator; // Controla a paginação.
@@ -142,31 +110,6 @@ export class PedidosComponent implements OnInit, AfterViewInit {
       return pedidoDate >= startDate && pedidoDate <= endDate; // Retorna apenas os pedidos dentro do intervalo.
     });
   }
-}
-
-function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.floor(Math.random() * NAMES.length)] +
-    ' ' +
-    NAMES[Math.floor(Math.random() * NAMES.length)].charAt(0) +
-    '.';
-
-  // Gerando uma data aleatória entre 2022-01-01 e hoje
-  const startDate = new Date(2022, 0, 1); // 1 de janeiro de 2022
-  const endDate = new Date(); // Data atual
-  const date = new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
-
-  // Gerando um valor aleatório formatado como R$XX,00
-  const value = `R$${(Math.random() * 100).toFixed(2).replace('.', ',')}`;
-
-  return {
-    id: id.toString(),
-    name: name,
-    fruit: FRUITS[Math.floor(Math.random() * FRUITS.length)],
-    date: date,
-    value: value, // A nova propriedade
-    actions: 'Ações', // Placeholder para a coluna de ações
-  };
 }
   
 /*

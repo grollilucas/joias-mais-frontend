@@ -38,6 +38,21 @@
         <td mat-cell *matCellDef="let row"> {{row.valor}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="acrescimos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Acrescimos </th>
+        <td mat-cell *matCellDef="let row"> {{row.acrescimos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descontos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descontos </th>
+        <td mat-cell *matCellDef="let row"> {{row.descontos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="emissao">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Emissão </th>
+        <td mat-cell *matCellDef="let row"> {{row.emissao}} </td>
+      </ng-container>
+
      
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Ações </th>
