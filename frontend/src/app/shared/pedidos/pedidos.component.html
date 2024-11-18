@@ -1,6 +1,6 @@
 
+
  <div class="teste">
-  <div class="naosei"></div>
   <h2>Gerenciar Pedidos</h2>
 
   <br>
@@ -33,27 +33,9 @@
         <td mat-cell *matCellDef="let row"> {{row.id}} </td>
       </ng-container>
 
-     
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cliente </th>
-        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-      </ng-container>
-
-     
-      <ng-container matColumnDef="fruit">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Vendedor </th>
-        <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
-      </ng-container>
-
-      
-      <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Emissão </th>
-        <td mat-cell *matCellDef="let row"> {{row.date | date: 'dd/MM/yyyy' }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="value">
+      <ng-container matColumnDef="valor">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Valor </th>
-        <td mat-cell *matCellDef="let row"> {{row.value}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.valor}} </td>
       </ng-container>
 
      
@@ -76,3 +58,31 @@
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </div>
 </div>
+<!-- 
+
+<div class="teste">
+
+
+  <mat-form-field>
+    <mat-label>Procure aqui um pedido</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Digite para buscar" #input>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Insira uma data</mat-label>
+    <mat-date-range-input [rangePicker]="picker" (dateChange)="filterByDate($event.value.start, $event.value.end)">
+      <input matStartDate placeholder="Data de Início">
+      <input matEndDate placeholder="Data Final">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" matSort>
+    
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+
+
+</div> -->

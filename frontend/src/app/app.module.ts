@@ -24,7 +24,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
@@ -34,6 +34,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { PedidosComponent } from './shared/pedidos/pedidos.component';
 import { MatTableModule } from '@angular/material/table';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -51,7 +53,6 @@ import { MatTableModule } from '@angular/material/table';
     LoginComponent,
     FormBaseComponent,
     SidenavComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -76,8 +77,15 @@ import { MatTableModule } from '@angular/material/table';
     MatCheckboxModule,
     MatSidenavModule,
     MatTableModule,
+    CommonModule
 ],
-  providers: [],
+  providers: [
+    {
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptor,
+			multi: true
+		},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

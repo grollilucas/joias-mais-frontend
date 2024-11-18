@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Produto } from 'src/app/core/services/produtos.service';
 
 @Component({
   selector: 'app-card-busca',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-busca.component.scss']
 })
 export class CardBuscaComponent {
-
+  
+  @Input()
+  produto?: Produto;
 }

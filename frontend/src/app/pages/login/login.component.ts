@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ){}
 
+  storage = localStorage;
+
 
   ngOnInit(): void {
    this.loginForm = this.formBuilder.group({
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
     this.authServer.autenticar(email, senha).subscribe({
       next: (value) => {
         console.log('funcionaAA', value)
+        this.storage.setItem('token', value.token);
         this.router.navigateByUrl('/')
       },
       error: (err) => {

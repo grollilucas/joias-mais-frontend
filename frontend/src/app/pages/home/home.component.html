@@ -1,18 +1,18 @@
 <section class="homepage">
   <app-container>
-    <app-form-busca></app-form-busca>
-    <h2>Produtos</h2>
-    <div class="card-wrapper">
-      <app-card-busca></app-card-busca>
-      <app-card-busca></app-card-busca>
-      <app-card-busca></app-card-busca>
-      <app-card-busca></app-card-busca>
-      <app-card-busca></app-card-busca>
-      <app-card-busca></app-card-busca>
-      <app-card-busca></app-card-busca>
-      <app-card-busca></app-card-busca>
-      <app-card-busca></app-card-busca>
-    </div>
+
+    <section class="container">
+      <header>Que jóia você procura?</header>
+      <div class="busca">
+        <input type="search">
+        <button>
+          <img src="assets/icones/lupa.png">
+        </button>
+      </div>
+     </section>
+     <br> <br> <br>
+      <div class="card-wrapper">
+        <app-card-busca [produto]="produto" *ngFor="let produto of produtos"></app-card-busca>
+      </div>
   </app-container>
 </section>
-
