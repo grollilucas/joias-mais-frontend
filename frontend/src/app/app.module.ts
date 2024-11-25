@@ -37,6 +37,7 @@ import { MatTableModule } from '@angular/material/table';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { CommonModule } from '@angular/common';
 import { CarrinhoComponent } from './shared/carrinho/carrinho.component';
+import { ClientesComponent } from './pages/clientes/clientes.component';
 
 
 
@@ -54,7 +55,7 @@ import { CarrinhoComponent } from './shared/carrinho/carrinho.component';
     LoginComponent,
     FormBaseComponent,
     SidenavComponent,
-    CarrinhoComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,

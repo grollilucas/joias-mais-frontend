@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor{
         if(isApiCall){
             console.log("Aplicou autenticação na requisição da rota", req.url);
               const authReq = req.clone({
-                headers: req.headers.set('Authorization', `Bearer ${this.token}`)
+                headers: req.headers.set('Authorization', `Bearer ${this.token}`).set('Content-Type', 'application/json')
             });
             return next.handle(authReq);
         }

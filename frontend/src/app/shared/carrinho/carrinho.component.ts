@@ -22,6 +22,9 @@ export class CarrinhoComponent {
 
   enviarPedido() {
     console.log('Pedido enviado:', this.carrinhoService.getCarrinho());
-    this.carrinhoService.limparCarrinho();
+    this.carrinhoService.enviaPedido().subscribe((retorno) => {
+      console.log("Foi para api o pedido ->", retorno);
+      this.carrinhoService.limparCarrinho();
+    })
   }
 }
