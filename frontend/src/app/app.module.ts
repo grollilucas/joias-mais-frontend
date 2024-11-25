@@ -36,6 +36,7 @@ import { PedidosComponent } from './shared/pedidos/pedidos.component';
 import { MatTableModule } from '@angular/material/table';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { CommonModule } from '@angular/common';
+import { CarrinhoComponent } from './shared/carrinho/carrinho.component';
 
 
 
@@ -53,6 +54,7 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     FormBaseComponent,
     SidenavComponent,
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,

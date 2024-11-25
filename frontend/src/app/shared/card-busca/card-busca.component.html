@@ -1,19 +1,17 @@
 <mat-card *ngIf="produto" class="card-busca">
-  <img mat-card-image
-    src="{{ produto.url_foto }}">
-    <!--imagem generica de um anel (la ele)-->
+  <img mat-card-image src="{{ produto.url_foto }}">
 
   <mat-card-content>
     <ul>
       <li>{{ produto.nome }}</li>
-      <li>R$ {{ produto.preco }}</li>
+      <li>{{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}</li>
     </ul>
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-flat-button [routerLink]="'produtos/' + produto.id" color="primary">VER DETALHES</button>
-  <!--não ta funcionando o ver detalhes ainda!-->
-  </mat-card-actions>
 
+    <button mat-raised-button color="primary" (click)="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+  </mat-card-actions>
 </mat-card>
+
 
