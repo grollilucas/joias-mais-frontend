@@ -30,7 +30,7 @@ import { ProdutoInterface, ProdutoService } from 'src/app/core/services/produtos
 
 
 export class ProdutosComponent implements OnInit {
-    displayedColumns: string[] = ['id', 'nome', 'preco', 'url_foto', 'actions']; // Define as colunas exibidas na tabela.
+    displayedColumns: string[] = [ 'id', 'url_foto', 'nome', 'preco',  'actions']; // Define as colunas exibidas na tabela.
     dataSource: MatTableDataSource<any>; // Gerencia os dados da tabela.
 
     @ViewChild(MatPaginator) paginator!: MatPaginator; // Controla a paginação.

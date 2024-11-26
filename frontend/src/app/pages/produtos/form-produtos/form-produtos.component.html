@@ -1,0 +1,50 @@
+<app-container>
+  <mat-card>
+    <form [formGroup]="produtoForm" (submit)="enviarProduto()">
+
+      <mat-card-title>
+        {{ id ? 'Atualize' : 'Crie' }} Produto
+      </mat-card-title>
+
+      <section>
+        <div class="acoesPerfil">
+          <h2>Produto</h2>
+          <button *ngIf="token" mat-stroked-button color="primary">
+            <mat-icon>logout</mat-icon>
+            DESLOGAR
+          </button>
+        </div>
+      </section>
+
+      <mat-card-content>
+        <div class="grid-container">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Nome</mat-label>
+            <input matInput [value]="produto.nome" formControlName="nome" placeholder="Nome">
+            <mat-error *ngIf="produtoForm.get('nome')?.errors">Nome é obrigatório</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Preço</mat-label>
+            <input formControlName="preco" placeholder="Preço">
+            <mat-error *ngIf="produtoForm.get('preco')?.errors">Preço é obrigatório</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>URL Foto</mat-label>
+            <input formControlName="url_foto" placeholder="URL Foto">
+            <mat-error *ngIf="produtoForm.get('url_foto')?.errors">URL Foto é Obrigatório</mat-error>
+          </mat-form-field>
+
+        </div>
+
+      </mat-card-content>
+
+      <mat-card-actions class="full-width">
+        <button mat-flat-button [disabled]="produtoForm.invalid" color="primary">{{ id ? 'ATUALIZAR' : 'CADASTRAR'
+          }}</button>
+      </mat-card-actions>
+
+    </form>
+  </mat-card>
+</app-container>

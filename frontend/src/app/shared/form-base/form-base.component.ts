@@ -24,7 +24,6 @@ export class FormBaseComponent implements OnInit{
   id?: number;
   cliente: Cliente = { nome: '', email: '', telefone: '', ddd: '', cnpj: '', cpf: ''};
 
-
   storage = localStorage; 
   token?: string | null;
 

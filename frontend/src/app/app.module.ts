@@ -38,6 +38,7 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { CommonModule } from '@angular/common';
 import { CarrinhoComponent } from './shared/carrinho/carrinho.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
 
 
 
@@ -55,7 +56,8 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
     LoginComponent,
     FormBaseComponent,
     SidenavComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    FormProdutosComponent
   ],
   imports: [
     BrowserModule,
