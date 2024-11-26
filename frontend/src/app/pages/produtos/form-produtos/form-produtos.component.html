@@ -26,14 +26,20 @@
 
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Preço</mat-label>
-            <input formControlName="preco" placeholder="Preço">
+            <input matInput [value]="produto.preco" formControlName="preco" placeholder="Preço">
             <mat-error *ngIf="produtoForm.get('preco')?.errors">Preço é obrigatório</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>URL Foto</mat-label>
-            <input formControlName="url_foto" placeholder="URL Foto">
+            <input matInput [value]="produto.url_foto" formControlName="url_foto" placeholder="URL Foto">
             <mat-error *ngIf="produtoForm.get('url_foto')?.errors">URL Foto é Obrigatório</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Quantidade</mat-label>
+            <input matInput [value]="produto.estoque" placeholder="Quantidade">
+            <mat-error *ngIf="produtoForm.get('estoque')?.errors">Quantidade é Obrigatório</mat-error>
           </mat-form-field>
 
         </div>

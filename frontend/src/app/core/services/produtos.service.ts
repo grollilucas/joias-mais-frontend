@@ -5,18 +5,22 @@ import { Observable } from 'rxjs'; // Representa um fluxo de dados assíncrono q
 import { environment } from 'src/environments/environment';
 
 export interface Produto {
+  id: number;
   nome: string;
   descricao?: string;
   preco: number;
-  id: number;
-  url_foto: string;
+  url_foto: string; 
+  vendedor_id?: number;
+  created_at?: Date;
+  updated_at?: Date;
+  estoque?: number;
 }
 
 export interface ProdutoInterface {
   data: Produto[]
 }
 
-export interface ProdutosInterface{
+export interface ProdutosInterface {
   data: Produto[]
 }
 
@@ -39,7 +43,7 @@ export class ProdutoService {
     return this.http.get<ProdutoInterface>(`${this.pedidosUrl}/${id}`);
   }
 
-  criaProduto(body: Produto): Observable<any>{
+  criaProduto(body: Produto): Observable<any> {
     return this.http.post<Produto>(`${this.pedidosUrl}`, body);
   }
 
