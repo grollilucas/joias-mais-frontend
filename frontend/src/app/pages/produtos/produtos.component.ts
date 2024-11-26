@@ -7,8 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { RouterModule } from '@angular/router';
-import { ProdutoInterface, ProdutoService } from 'src/app/core/services/produtos.service';
+import { Router, RouterModule } from '@angular/router';
+import { Produto, ProdutoInterface, ProdutoService } from 'src/app/core/services/produtos.service';
 
 @Component({
     selector: 'produtos',
@@ -29,13 +29,15 @@ import { ProdutoInterface, ProdutoService } from 'src/app/core/services/produtos
 
 
 export class ProdutosComponent implements OnInit {
-    displayedColumns: string[] = [ 'id', 'url_foto', 'nome', 'preco',  'actions']; // Define as colunas exibidas na tabela.
+    displayedColumns: string[] = ['id', 'url_foto', 'nome', 'preco', 'estoque', 'actions']; // Define as colunas exibidas na tabela.
     dataSource: MatTableDataSource<any>; // Gerencia os dados da tabela.
 
     @ViewChild(MatPaginator) paginator!: MatPaginator; // Controla a paginação.
     @ViewChild(MatSort) sort!: MatSort; // Controla a ordenação.
 
-    constructor(private produtoService: ProdutoService) { // Injeta o serviço de pedidos no componente.
+    constructor(private produtoService: ProdutoService,
+        private router: Router,
+    ) { // Injeta o serviço de pedidos no componente.
         this.dataSource = new MatTableDataSource<any>; // Inicializa a tabela sem dados.
     }
 
@@ -54,4 +56,17 @@ export class ProdutosComponent implements OnInit {
             this.dataSource = new MatTableDataSource(data.data); // Atribui os dados retornados pela API à tabela.
         },)
     }
+
+    deletarPedido(id: number) {
+        this.produtoService.deletarProduto(id).subscribe({
+            next: () => {
+                console.log(`Produto com ID ${id} deletado com sucesso!`);
+            },
+            error: (err) => {
+                console.error('Erro ao deletar o produto:', err);
+            }
+        });
+        this.router.navigate(['/']); // Redireciona ou atualiza a página
+    }
+
 }

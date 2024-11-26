@@ -50,4 +50,8 @@ export class ProdutoService {
   atualizaProduto(id: number, body: Produto): Observable<any> {
     return this.http.put<ProdutoInterface>(`${this.pedidosUrl}/${id}`, body);
   }
+
+  deletarProduto(id: number): Observable<any> {
+    return this.http.delete<ProdutoInterface>(`${this.pedidosUrl}/${id}`);
+  }
 }
