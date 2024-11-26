@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 import { PedidosComponent } from './shared/pedidos/pedidos.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { ProdutosComponent } from './pages/produtos/produtos.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'cadastro/:id',
     component: FormBaseComponent,
+  },
+  {
+    path: 'produtos',
+    component: ProdutosComponent,
   },
   {
     path: 'pedidos',
