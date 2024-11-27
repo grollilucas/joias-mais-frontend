@@ -52,7 +52,7 @@ export class ProdutosComponent implements OnInit {
 
     ngOnInit() {
         this.produtoService.getProdutos().subscribe((data: ProdutoInterface) => {
-            console.log(data);
+            console.log("iniciando tabela", data);
             this.dataSource = new MatTableDataSource(data.data); // Atribui os dados retornados pela API à tabela.
         },)
     }
@@ -66,7 +66,8 @@ export class ProdutosComponent implements OnInit {
                 console.error('Erro ao deletar o produto:', err);
             }
         });
-        this.router.navigate(['/']); // Redireciona ou atualiza a página
+        this.router.navigate(['/']);
+         // Redireciona ou atualiza a página
     }
 
 }

@@ -31,18 +31,18 @@ export class FormProdutosComponent implements OnInit {
       nome: [null, Validators.required],
       preco: [null, Validators.required],
       url_foto: [null, Validators.required],
-      estoque: [[0, Validators.required]]
+      estoque: [null, Validators.required],
     });
 
     if (this.id) {
       console.log('Está editando -> ', this.id);
       this.produtoService.getProduto(this.id).subscribe((data: ProdutoInterface) => {
-      //this.produto = data.data
+     // this.produto = data.data
         this.produtoForm = this.formBuilder.group({
           nome: [this.produto.nome, Validators.required],
           preco: [this.produto.preco, Validators.required],
           url_foto: [this.produto.url_foto, Validators.required],
-          estoque: [[this.produto.estoque, Validators.required]]
+          estoque: [this.produto.estoque, Validators.required]
         });
       })
       return;
@@ -54,8 +54,11 @@ export class FormProdutosComponent implements OnInit {
       ...this.produto,
       nome: this.produtoForm.controls['nome'].value,
       preco: this.produtoForm.controls['preco'].value,
-      url_foto: this.produtoForm.controls['url_foto'].value
+      url_foto: this.produtoForm.controls['url_foto'].value,
+      estoque: this.produtoForm.controls['estoque'].value,
     };
+
+    
 
     if (this.id) {
       this.produtoService.atualizaProduto(this.id, this.produto).subscribe((retorno) => {
@@ -67,6 +70,7 @@ export class FormProdutosComponent implements OnInit {
     }
 
     this.produtoService.criaProduto(this.produto).subscribe((retorno) => {
+      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", this.produto)
       if (retorno.data) {
         this.router.navigate(['produtos']);
       }

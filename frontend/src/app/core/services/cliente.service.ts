@@ -47,4 +47,7 @@ export interface ClienteInterface{
     atualizaCliente(id: number, body: Cliente): Observable<any>{
       return this.http.put<ClienteInterface>(`${this.clientesUrl}/${id}`, body);
     }
+    deletarCliente(id: number): Observable<any> {
+      return this.http.delete<ClienteInterface>(`${this.clientesUrl}/${id}`);
+    }
   }

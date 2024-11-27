@@ -42,9 +42,8 @@ export class CarrinhoService {
 
     enviaPedido(): Observable<any> {
         const pedido = {
-            cliente_id: 1,
+            cliente_id: 2,
             vendedor_id: 2,
-            acrescimentos: 0,
             descontos: 0,
             acrescimos: 0,
             valor: this.itens.reduce((sum, item) => sum + item.produto.preco * item.quantidade, 0),

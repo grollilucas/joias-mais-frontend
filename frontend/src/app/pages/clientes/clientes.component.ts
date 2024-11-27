@@ -7,7 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ClientesInterface, ClienteInterface, ClienteService } from 'src/app/core/services/cliente.service';
 
 @Component({
@@ -34,7 +34,9 @@ export class ClientesComponent implements OnInit {
     @ViewChild(MatPaginator) paginator!: MatPaginator; // Controla a paginação.
     @ViewChild(MatSort) sort!: MatSort; // Controla a ordenação.
 
-    constructor(private clienteService: ClienteService) { // Injeta o serviço de pedidos no componente.
+    constructor(private clienteService: ClienteService,
+        private router: Router,
+    ) { // Injeta o serviço de pedidos no componente.
         this.dataSource = new MatTableDataSource<any>; // Inicializa a tabela sem dados.
     }
 
@@ -52,5 +54,17 @@ export class ClientesComponent implements OnInit {
             console.log(data);
             this.dataSource = new MatTableDataSource(data.data); // Atribui os dados retornados pela API à tabela.
         },)
+    }
+
+    deletarCliente(id: number) {
+        this.clienteService.deletarCliente(id).subscribe({
+            next: () => {
+                console.log(`Produto com ID ${id} deletado com sucesso!`);
+            },
+            error: (err) => {
+                console.error('Erro ao deletar o cliente:', err);
+            }
+        });
+        this.router.navigate(['/']); // Redireciona ou atualiza a página
     }
 }

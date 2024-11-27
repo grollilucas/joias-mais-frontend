@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { Produto } from 'src/app/core/services/produtos.service';
 
@@ -8,7 +9,7 @@ import { Produto } from 'src/app/core/services/produtos.service';
   styleUrls: ['./carrinho.component.scss'],
 })
 export class CarrinhoComponent {
-  constructor(public carrinhoService: CarrinhoService) {}
+  constructor(public carrinhoService: CarrinhoService, private router: Router) {}
 
   get total(): number {
     return this.carrinhoService
@@ -25,6 +26,7 @@ export class CarrinhoComponent {
     this.carrinhoService.enviaPedido().subscribe((retorno) => {
       console.log("Foi para api o pedido ->", retorno);
       this.carrinhoService.limparCarrinho();
+      window.location.reload();
     })
   }
 }

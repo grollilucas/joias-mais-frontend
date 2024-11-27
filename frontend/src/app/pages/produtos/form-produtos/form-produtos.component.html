@@ -38,7 +38,7 @@
 
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Quantidade</mat-label>
-            <input matInput [value]="produto.estoque" placeholder="Quantidade">
+            <input matInput [value]="produto.estoque" formControlName="estoque" placeholder="Quantidade">
             <mat-error *ngIf="produtoForm.get('estoque')?.errors">Quantidade é Obrigatório</mat-error>
           </mat-form-field>
 

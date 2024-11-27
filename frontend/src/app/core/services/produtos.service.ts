@@ -16,12 +16,29 @@ export interface Produto {
   estoque?: number;
 }
 
+
+export interface EstoqueProdutoApi {
+  quantidade: number;
+}
+
+export interface ProdutoApi {
+  id?: number;
+  nome: string;
+  descricao?: string;
+  preco: number;
+  url_foto: string;
+  vendedor_id?: number;
+  created_at?: Date;
+  updated_at?: Date;
+  estoque: EstoqueProdutoApi;
+}
+
 export interface ProdutoInterface {
-  data: Produto[]
+  data: ProdutoApi[]
 }
 
 export interface ProdutosInterface {
-  data: Produto[]
+  data: ProdutoApi[]
 }
 
 

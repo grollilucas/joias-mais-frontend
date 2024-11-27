@@ -35,22 +35,22 @@
 
       <ng-container matColumnDef="valor">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Valor </th>
-        <td mat-cell *matCellDef="let row"> {{row.valor}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.valor | currency: 'BRL':'symbol':'1.2-2'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="acrescimos">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Acrescimos </th>
-        <td mat-cell *matCellDef="let row"> {{row.acrescimos}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.acrescimos | currency: 'BRL':'symbol':'1.2-2'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="descontos">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Descontos </th>
-        <td mat-cell *matCellDef="let row"> {{row.descontos}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.descontos | currency: 'BRL':'symbol':'1.2-2'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="emissao">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Emissão </th>
-        <td mat-cell *matCellDef="let row"> {{row.emissao}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.created_at | date: 'dd/MM/yyyy'}} </td>
       </ng-container>
 
      
