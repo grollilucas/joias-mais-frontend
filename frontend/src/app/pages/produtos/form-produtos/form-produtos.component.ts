@@ -34,19 +34,24 @@ export class FormProdutosComponent implements OnInit {
       estoque: [null, Validators.required],
     });
 
-    if (this.id) {
+    if(this.id){
       console.log('Está editando -> ', this.id);
+
       this.produtoService.getProduto(this.id).subscribe((data: ProdutoInterface) => {
-     // this.produto = data.data
+       //this.produto = data.data
         this.produtoForm = this.formBuilder.group({
           nome: [this.produto.nome, Validators.required],
           preco: [this.produto.preco, Validators.required],
           url_foto: [this.produto.url_foto, Validators.required],
-          estoque: [this.produto.estoque, Validators.required]
+          estoque: [this.produto.estoque, Validators.required],
         });
       })
+
       return;
     }
+
+ 
+
   }
 
   enviarProduto() {

@@ -39,6 +39,7 @@ import { CommonModule } from '@angular/common';
 import { CarrinhoComponent } from './shared/carrinho/carrinho.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
+import { FormPedidos } from './shared/pedidos/form-pedidos/form-pedidos';
 
 
 
@@ -57,7 +58,8 @@ import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produ
     FormBaseComponent,
     SidenavComponent,
     CarrinhoComponent,
-    FormProdutosComponent
+    FormProdutosComponent,
+    FormPedidos
   ],
   imports: [
     BrowserModule,

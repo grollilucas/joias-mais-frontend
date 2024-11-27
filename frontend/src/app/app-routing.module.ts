@@ -7,6 +7,7 @@ import { PedidosComponent } from './shared/pedidos/pedidos.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
+import { FormPedidos } from './shared/pedidos/form-pedidos/form-pedidos';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
     path: 'pedidos',
     component: PedidosComponent
   }, 
+  {
+    path: 'pedidos/:id',
+    component: FormPedidos,
+  },
   {
     path: 'clientes',
     component: ClientesComponent

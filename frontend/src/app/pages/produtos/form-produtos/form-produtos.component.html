@@ -38,8 +38,14 @@
 
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Quantidade</mat-label>
-            <input matInput [value]="produto.estoque" formControlName="estoque" placeholder="Quantidade">
+            <input matInput [value]="produto.estoque" formControlName="preco" placeholder="Quantidade">
             <mat-error *ngIf="produtoForm.get('estoque')?.errors">Quantidade é Obrigatório</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Preço</mat-label>
+            <input matInput [value]="produto.preco" formControlName="preco" placeholder="Preço">
+            <mat-error *ngIf="produtoForm.get('preco')?.errors">Preço é obrigatório</mat-error>
           </mat-form-field>
 
         </div>

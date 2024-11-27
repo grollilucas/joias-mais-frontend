@@ -1,0 +1,52 @@
+<app-container>
+    <mat-card>
+      <form [formGroup]="pedidoForm" (submit)="enviarPedido()">
+  
+        <mat-card-title>
+          {{ id ? 'Atualize' : 'Crie' }} Pedido
+        </mat-card-title>
+  
+        <section>
+          <div class="acoesPerfil">
+            <h2>Produto</h2>
+            <button *ngIf="token" mat-stroked-button color="primary">
+              <mat-icon>logout</mat-icon>
+              DESLOGAR
+            </button>
+          </div>
+        </section>
+  
+        <mat-card-content>
+          <div class="grid-container">
+            
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Valor</mat-label>
+              <input matInput [value]="pedido.valor" formControlName="valor" placeholder="Valor">
+              <mat-error *ngIf="pedidoForm.get('valor')?.errors">Valor é obrigatório</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Acréscimos</mat-label>
+              <input matInput [value]="pedido.acrescimos" formControlName="acrescimo" placeholder="Acréscimos">
+              <mat-error *ngIf="pedidoForm.get('acrescimo')?.errors">Acréscimo é obrigatório</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Descontos</mat-label>
+              <input matInput [value]="pedido.descontos" formControlName="descontos" placeholder="Descontos">
+              <mat-error *ngIf="pedidoForm.get('descontos')?.errors">Desconto é obrigatório</mat-error>
+            </mat-form-field>
+  
+  
+          </div>
+  
+        </mat-card-content>
+  
+        <mat-card-actions class="full-width">
+          <button mat-flat-button [disabled]="pedidoForm.invalid" color="primary">{{ id ? 'ATUALIZAR' : 'CADASTRAR'
+            }}</button>
+        </mat-card-actions>
+  
+      </form>
+    </mat-card>
+  </app-container>

@@ -57,7 +57,7 @@ export class ProdutosComponent implements OnInit {
         },)
     }
 
-    deletarPedido(id: number) {
+    deletarProduto(id: number) {
         this.produtoService.deletarProduto(id).subscribe({
             next: () => {
                 console.log(`Produto com ID ${id} deletado com sucesso!`);

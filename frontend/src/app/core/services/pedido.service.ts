@@ -5,18 +5,23 @@ import { Observable } from 'rxjs'; // Representa um fluxo de dados assíncrono q
 import { environment } from 'src/environments/environment';
 
 export interface Pedidos{
-  id: number;
-  valor: number;
-  acrescimos: number;
-  descontos: number;
-  cliente_id: number;
-  vendedor_id: number;
-  emissao: Date;
+  id?: number;
+  valor?: number;
+  acrescimos?: number;
+  descontos?: number;
+  cliente_id?: number;
+  vendedor_id?: number;
+  emissao?: Date;
 }
 
 export interface DataInterface{
   data: Pedidos[]
 }
+
+export interface PedidoInterface{
+  data: Pedidos
+}
+
 
 
 @Injectable({
@@ -34,4 +39,20 @@ export class PedidoService {
   getPedidos(): Observable<DataInterface> {
     return this.http.get<DataInterface>(this.pedidosUrl); // Faz uma requisição GET à API e retorna os dados como um Observable.
   }
+
+  getPedido(id: number): Observable<PedidoInterface> {
+    return this.http.get<PedidoInterface>(`${this.pedidosUrl}/${id}`);
+  }
+
+  atualizaPedido(id: number, body: Pedidos): Observable<any> {
+    return this.http.put<PedidoInterface>(`${this.pedidosUrl}/${id}`, body);
+  }
+  
+  deletarPedido(id: number): Observable<any> {
+    return this.http.delete<PedidoInterface>(`${this.pedidosUrl}/${id}`);
+  }
 }
+
+
+
+

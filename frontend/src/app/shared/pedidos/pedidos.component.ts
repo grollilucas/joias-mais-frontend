@@ -9,6 +9,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CommonModule } from '@angular/common';
 import { PedidoService, DataInterface } from 'src/app/core/services/pedido.service';
+import { Router, RouterModule } from '@angular/router';
 
 export interface UserData {
   id: string;
@@ -33,7 +34,8 @@ export interface UserData {
     MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
 })
 /*
@@ -74,7 +76,7 @@ export class PedidosComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator; // Controla a paginação.
   @ViewChild(MatSort) sort!: MatSort; // Controla a ordenação.
 
-  constructor(private pedidoService: PedidoService) { // Injeta o serviço de pedidos no componente.
+  constructor(private pedidoService: PedidoService, private router: Router) { // Injeta o serviço de pedidos no componente.
     this.dataSource = new MatTableDataSource<any>; // Inicializa a tabela sem dados.
   }
 
@@ -109,6 +111,19 @@ export class PedidosComponent implements OnInit, AfterViewInit {
       const pedidoDate = new Date(pedido.date); // Converte a data do pedido para o formato Date.
       return pedidoDate >= startDate && pedidoDate <= endDate; // Retorna apenas os pedidos dentro do intervalo.
     });
+  }
+
+  deletarPedido(id: number) {
+    this.pedidoService.deletarPedido(id).subscribe({
+      next: () => {
+        console.log(`Produto com ID ${id} deletado com sucesso!`);
+      },
+      error: (err) => {
+        console.error('Erro ao deletar o produto:', err);
+      }
+    });
+    this.router.navigate(['/']);
+    // Redireciona ou atualiza a página
   }
 }
   
