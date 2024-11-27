@@ -1,12 +1,21 @@
 <div class="carrinho">
-    <h3>Carrinho</h3>
+
+
+    <div class="cart-header">
+        <img src="/assets/icones/carrinho.png" alt="Carrinho" />
+        <h3> <strong> Meu Carrinho </strong></h3>
+    </div>
+
+
+
     <div *ngFor="let item of carrinhoService.getCarrinho()">
-        <p> {{ item.quantidade }}x - {{ item.produto.nome }} - {{ item.produto.preco | currency:'BRL':'symbol':'1.2-2' }}</p>
+        <p> {{ item.quantidade }}x - {{ item.produto.nome }} - {{ item.produto.preco | currency:'BRL':'symbol':'1.2-2'
+            }}</p>
         <button mat-icon-button color="warn" (click)="removerItem(item.produto)">
             <mat-icon>delete</mat-icon>
         </button>
-       
+
     </div>
-    <p>Total: {{ total | currency:'BRL':'symbol':'1.2-2' }}</p>
+    <p class="total">Total: {{ total | currency:'BRL':'symbol':'1.2-2' }}</p>
     <button mat-raised-button color="primary" (click)="enviarPedido()">Enviar Pedido</button>
 </div>

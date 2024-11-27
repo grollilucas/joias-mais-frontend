@@ -1,18 +1,24 @@
 .card-busca {
   max-width: 220px;
-  max-height: max-content;
+  height: 100%; // Define altura igual para todos
+  display: flex; // Torna o layout interno flexível
+  flex-direction: column; // Alinha itens verticalmente
+  justify-content: space-between; // Distribui os elementos igualmente
   background-color: #FEF7FF;
   border-radius: 12px;
+
   button {
-    width: 100%;
-    margin: 0 16px 48px;
+    width: calc(100% - 32px); // Respeita padding
+    margin: 0 16px 16px; // Ajusta espaçamento inferior
     font-size: 12px;
   }
+
   ul {
     list-style: none;
-    padding: 0;
+    padding: 16px; // Adiciona espaçamento interno
+    margin: 0;
+
     li {
-      margin: 8px;
       font-weight: 400;
       font-size: 18px;
       line-height: 22px;

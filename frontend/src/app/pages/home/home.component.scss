@@ -1,13 +1,16 @@
+
 .homepage {
   .card-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: left;
+    column-gap: 15px;
     row-gap: 16px;
     margin-bottom: 40px;
+    
   }
   h2 {
-    font-size: 32px;
+    font-size: 25px;
   }
 }
 
@@ -17,6 +20,8 @@ section {
   flex-direction: column;
   align-items: center;
   min-height: 100%;
+  
+  
 }
 
 header {
@@ -29,19 +34,19 @@ header {
   margin-bottom: 5px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   font-family: 'Poppins', sans-serif;
+  
+  
 }
 
 section input {
+  
   width: 588px;
   height: 56px;
+  margin-left: 15%;
   border: 2px solid #6C63FF;
   border-radius: 10px;
   outline: 0;
   box-sizing: border-box;
-  top: 220px;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: 4.08%;
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -57,6 +62,7 @@ section p {
   font-size: 16px;
   line-height: 24px;
   color: #8B8B8B;
+  
 }
 
 .resultados {
@@ -98,6 +104,7 @@ section button {
 
 .busca {
   display: flex;
+  
 }
 
 .teste {
@@ -119,6 +126,7 @@ section button {
 
 .imagens {
   display: flex;
+  
 }
 
 .ilustracao {
@@ -131,6 +139,8 @@ section button {
   margin-top: 72px;
   margin-left: 64px;
 }
+
+
 
 
 

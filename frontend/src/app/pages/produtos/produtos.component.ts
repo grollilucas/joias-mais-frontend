@@ -67,6 +67,7 @@ export class ProdutosComponent implements OnInit {
             }
         });
         this.router.navigate(['/']);
+        
          // Redireciona ou atualiza a página
     }
 

@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
 
     this.produtoService.getProdutos().subscribe((data) => {
-
+      
       const produtosApi: ProdutoApi[] = data.data;
 
       const produtosFiltrados: ProdutoApi[] = produtosApi.filter((produto: ProdutoApi) => 
@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
       })
 
       this.produtos = produtosConvertidos;
+      
     });
     
   }
