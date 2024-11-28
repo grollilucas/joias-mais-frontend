@@ -5,8 +5,12 @@
 .mat-mdc-form-field {
   display: flex;
   font-size: 14px;
-  width: 35%;
+  width: 80%;
+  margin: auto;
+  justify-content: center; /* Alinha horizontalmente */
+  align-items: center; /* Alinha verticalmente */
 }
+
 
 .filter-container {
   display: flex;

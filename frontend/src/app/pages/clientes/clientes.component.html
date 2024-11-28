@@ -8,24 +8,14 @@
     <div class="filter-container">
       
       <mat-form-field class="mat-mdc-form-field">
-        <mat-label>Filtros</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Procure aqui um pedido" #input>
+        <mat-label>Procure aqui um Cliente</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input>
       </mat-form-field>
   
-     
-      <mat-form-field class="">
-        <mat-label>Insira uma data</mat-label>
-        <mat-date-range-input [rangePicker]="picker">
-          <input matStartDate value="" placeholder="Data de Início">
-          <input matEndDate placeholder="Data Final">
-        </mat-date-range-input>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
-      </mat-form-field>
     </div>
   
     <div>
-      <table mat-table [dataSource]="dataSource" matSort>
+      <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
   
         
         <ng-container matColumnDef="id">

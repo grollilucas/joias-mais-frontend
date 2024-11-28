@@ -8,14 +8,14 @@
   <br>
 
 
-  <button routerLink="/produtos/novo" mat-raised-button color="primary" style="margin-right: 10px;">+ Novo
-    Produto</button>
-
+  
   <mat-form-field>
     <mat-label>Procure aqui um produto</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Procure aqui um produto" #input style="width: 150px;">
+    <input matInput (keyup)="applyFilter($event)" #input style="width: 150px;">
   </mat-form-field>
-
+  
+  <button routerLink="/produtos/novo" mat-raised-button color="accent" style="margin-right: 10px;">+ Novo Produto</button>
+  <br>
 
   <div>
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
