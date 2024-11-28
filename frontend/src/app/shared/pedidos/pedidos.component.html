@@ -1,6 +1,4 @@
-
-
- <div class="teste">
+<div class="teste">
   <h2>Gerenciar Pedidos</h2>
 
   <br>
@@ -25,7 +23,7 @@
   </div>
 
   <div>
-    <table mat-table [dataSource]="dataSource" matSort>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
       
       <ng-container matColumnDef="id">
@@ -58,7 +56,8 @@
         <th mat-header-cell *matHeaderCellDef> Ações </th>
         <td mat-cell *matCellDef="let row">
           <button [routerLink]="['/pedidos', row.id]" mat-raised-button color="primary">Editar</button>
-          <button mat-raised-button color="primary" (click)="deletarPedido(row.id)">Deletar</button>
+          <button mat-raised-button color="warn" (click)="deletarPedido(row.id)" style="margin-left: 10px;">
+            Deletar</button>
         </td>
       </ng-container>
 
@@ -74,31 +73,3 @@
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </div>
 </div>
-<!-- 
-
-<div class="teste">
-
-
-  <mat-form-field>
-    <mat-label>Procure aqui um pedido</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Digite para buscar" #input>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Insira uma data</mat-label>
-    <mat-date-range-input [rangePicker]="picker" (dateChange)="filterByDate($event.value.start, $event.value.end)">
-      <input matStartDate placeholder="Data de Início">
-      <input matEndDate placeholder="Data Final">
-    </mat-date-range-input>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-date-range-picker #picker></mat-date-range-picker>
-  </mat-form-field>
-
-  <table mat-table [dataSource]="dataSource" matSort>
-    
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
-
-
-</div> -->

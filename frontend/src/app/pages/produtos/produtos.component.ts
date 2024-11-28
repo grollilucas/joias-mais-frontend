@@ -1,8 +1,11 @@
+
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
@@ -12,6 +15,7 @@ import { Produto, ProdutoInterface, ProdutoService } from 'src/app/core/services
 
 @Component({
     selector: 'produtos',
+    styleUrls: ['produto.component.scss'],
     templateUrl: 'produtos.component.html',
     standalone: true,
     imports: [
@@ -23,7 +27,8 @@ import { Produto, ProdutoInterface, ProdutoService } from 'src/app/core/services
         MatDatepickerModule,
         MatNativeDateModule,
         CommonModule,
-        RouterModule
+        RouterModule,
+        MatButtonModule,
     ],
 })
 
@@ -43,7 +48,7 @@ export class ProdutosComponent implements OnInit {
 
     applyFilter(event: Event) {
         const filterValue = (event.target as HTMLInputElement).value; // Captura o texto digitado na barra de pesquisa.
-        this.dataSource.filter = filterValue.trim().toLowerCase(); // Filtra os dados da tabela com base no texto.
+        this.dataSource.filter = filterValue // Filtra os dados da tabela com base no texto.
 
         if (this.dataSource.paginator) {
             this.dataSource.paginator.firstPage(); // Retorna à primeira página ao aplicar o filtro.
@@ -72,3 +77,4 @@ export class ProdutosComponent implements OnInit {
     }
 
 }
+

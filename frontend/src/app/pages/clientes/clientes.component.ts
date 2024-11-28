@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,6 +14,7 @@ import { ClientesInterface, ClienteInterface, ClienteService } from 'src/app/cor
 @Component({
     selector: 'clientes',
     templateUrl: 'clientes.component.html',
+    styleUrls: ['clientes.component.scss'],
     standalone: true,
     imports: [
         MatFormFieldModule,
@@ -23,7 +25,8 @@ import { ClientesInterface, ClienteInterface, ClienteService } from 'src/app/cor
         MatDatepickerModule,
         MatNativeDateModule,
         CommonModule,
-        RouterModule
+        RouterModule,
+        MatButtonModule
     ],
 })
 

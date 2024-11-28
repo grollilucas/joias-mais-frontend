@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,7 +59,7 @@ import { FormPedidos } from './shared/pedidos/form-pedidos/form-pedidos';
     SidenavComponent,
     CarrinhoComponent,
     FormProdutosComponent,
-    FormPedidos
+    FormPedidos,
   ],
   imports: [
     BrowserModule,
@@ -84,13 +84,13 @@ import { FormPedidos } from './shared/pedidos/form-pedidos/form-pedidos';
     MatCheckboxModule,
     MatSidenavModule,
     MatTableModule,
-    CommonModule
+    CommonModule,
 ],
   providers: [
     {
 			provide: HTTP_INTERCEPTORS,
 			useClass: AuthInterceptor,
-			multi: true
+			multi: true,
 		},
   ],
   bootstrap: [AppComponent]

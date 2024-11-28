@@ -48,7 +48,7 @@
           <th mat-header-cell *matHeaderCellDef> Ações </th>
           <td mat-cell *matCellDef="let row">
             <button [routerLink]="['/cadastro', row.id]" mat-raised-button color="primary">Editar</button>
-            <button mat-raised-button color="primary" (click)="deletarCliente(row.id)">Deletar</button>
+            <button mat-raised-button color="warn" (click)="deletarCliente(row.id)" style="margin-left: 10px;">Deletar</button>
           </td>
         </ng-container>
   

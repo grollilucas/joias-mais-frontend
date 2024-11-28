@@ -1,67 +1,70 @@
 
 
 <div class="teste">
+
+
   <h2>Gerenciar Produtos</h2>
-  
+
   <br>
-  
-  <div class="filter-container">
-    
-    <mat-form-field class="mat-mdc-form-field">
-      <mat-label>Filtros</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Procure aqui um produto" #input>
-    </mat-form-field>
-    
-  </div>
-  
+
+
+  <button routerLink="/produtos/novo" mat-raised-button color="primary" style="margin-right: 10px;">+ Novo
+    Produto</button>
+
+  <mat-form-field>
+    <mat-label>Procure aqui um produto</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Procure aqui um produto" #input style="width: 150px;">
+  </mat-form-field>
+
+
   <div>
-      <button routerLink="/produtos/novo" mat-raised-button color="primary">+ Novo Produto</button>
-      <table mat-table [dataSource]="dataSource" matSort>
-  
-        <ng-container matColumnDef="url_foto">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Foto </th>
-            <td mat-cell *matCellDef="let row"> <img src="{{row.url_foto}} "> </td>
-        </ng-container>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="nome">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
-          <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
-        </ng-container>
+      <ng-container matColumnDef="url_foto">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Foto </th>
+        <td mat-cell *matCellDef="let row"> <img src="{{row.url_foto}} " style="width: 100px;"> </td>
+      </ng-container>
 
-        <ng-container matColumnDef="preco">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Preço </th>
-            <td mat-cell *matCellDef="let row"> {{row.preco | currency: 'BRL':'symbol':'1.2-2'}} </td>
-        </ng-container>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="estoque">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantidade </th>
-            <td mat-cell *matCellDef="let row"> {{row.estoque.quantidade}} </td>
-        </ng-container>
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+        <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
+      </ng-container>
 
-  
-       
-        <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef> Ações </th>
-          <td mat-cell *matCellDef="let row">
-            <button [routerLink]="['/produtos', row.id]" mat-raised-button color="primary">Editar</button>
-            <button mat-raised-button color="primary" (click)="deletarProduto(row.id)">Deletar</button>
-          </td>
-        </ng-container>
-  
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-      
-        <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="6">Nenhum produto "{{input.value}}" foi encontrado</td>
-        </tr>
-      </table>
-  
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-    </div>
+      <ng-container matColumnDef="preco">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Preço </th>
+        <td mat-cell *matCellDef="let row"> {{row.preco | currency: 'BRL':'symbol':'1.2-2'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="estoque">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantidade </th>
+        <td mat-cell *matCellDef="let row"> {{row.estoque.quantidade}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let row">
+          <button [routerLink]="['/produtos', row.id]" mat-raised-button color="primary">Editar</button>
+          <button mat-raised-button color="warn" (click)="deletarProduto(row.id)" style="margin-left: 10px;">
+            Deletar</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">Nenhum produto "{{input.value}}" foi encontrado</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </div>
+</div> 
+
+

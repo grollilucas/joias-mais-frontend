@@ -10,6 +10,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CommonModule } from '@angular/common';
 import { PedidoService, DataInterface } from 'src/app/core/services/pedido.service';
 import { Router, RouterModule } from '@angular/router';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 
 export interface UserData {
   id: string;
@@ -35,7 +36,8 @@ export interface UserData {
     MatDatepickerModule,
     MatNativeDateModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule,
   ],
 })
 /*

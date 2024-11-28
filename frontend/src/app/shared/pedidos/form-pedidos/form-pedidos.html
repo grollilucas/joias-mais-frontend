@@ -3,18 +3,10 @@
       <form [formGroup]="pedidoForm" (submit)="enviarPedido()">
   
         <mat-card-title>
-          {{ id ? 'Atualize' : 'Crie' }} Pedido
+          {{ id ? 'Atualize' : 'Crie' }} o Pedido nº {{id}}
         </mat-card-title>
   
-        <section>
-          <div class="acoesPerfil">
-            <h2>Produto</h2>
-            <button *ngIf="token" mat-stroked-button color="primary">
-              <mat-icon>logout</mat-icon>
-              DESLOGAR
-            </button>
-          </div>
-        </section>
+       
   
         <mat-card-content>
           <div class="grid-container">
